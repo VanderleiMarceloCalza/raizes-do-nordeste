@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>
+
+        Pedido Balcão
+
+    </title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <a href="/logout">
+
+            Sair
+
+        </a>
+
+    </nav>
+
+</header>
+
+<h1>
+
+    Novo Pedido Balcão
+
+</h1>
+
+<div class="pedido-box">
+
+    <h3>
+
+        👤 Atendente:
+        <span th:text="${nome}"></span>
+
+    </h3>
+
+    <h3>
+
+        🏪 Filial:
+        <span th:text="${filial}"></span>
+
+    </h3>
+
+    <form action="/pedido/balcao"
+          method="post">
+
+        <input type="text"
+               name="nome"
+               placeholder="Nome do cliente"
+               required>
+
+        <button type="submit">
+
+            Iniciar Pedido
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

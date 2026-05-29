@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Cardápio</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <img src="/images/logo.png" class="logo">
+
+    <nav class="menu">
+
+    <div class="menu-esquerda">
+	
+        <a href="/">Home</a>
+
+        <a href="/cardapio">Cardápio</a>
+		<a href="/acompanhar">
+
+        Meus Pedidos
+
+    </a>
+        <a href="/filiais">Trocar Filial</a>
+
+    </div>
+
+    <div class="menu-direita">
+
+        <span class="usuario">
+        	👤
+        <span th:text="${nome}"></span>
+			
+        </span><a href="/logout">
+
+           	👤 Sair
+
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+<div class="conteudo">
+
+    <div class="produtos-area">
+
+        <h1>
+
+            🍔 Cardápio
+
+        </h1>
+
+        <div id="lista"
+             class="produtos">
+
+        </div>
+
+    </div>
+
+    <div class="carrinho-box">
+
+        <h2>
+
+            🛒 Carrinho
+
+        </h2>
+
+        <ul id="carrinho"></ul>
+
+        <button onclick="finalizarPedido()">
+
+            ✅ Finalizar Pedido
+
+        </button>
+
+    </div>
+
+</div>
+
+<script th:inline="javascript">
+
+let pedidoId = /*[[${pedidoId}]]*/ 0;
+
+function carregarProdutos() {
+
+    fetch("/produtos")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        const lista =
+            document.getElementById("lista");
+
+        lista.innerHTML = "";
+
+        data.forEach(estoque => {
+
+            const div =
+                document.createElement("div");
+
+            div.classList.add("produto");
+
+            div.innerHTML = `
+
+                <h3>
+
+                    ${estoque.produto.nome}
+
+                </h3>
+
+                <p>
+
+                    R$
+                    ${estoque.produto.preco
+                        .toFixed(2)
+                        .replace(".", ",")}
+
+                </p>
+
+                <p>
+
+                    Estoque:
+                    ${estoque.quantidade}
+
+                </p>
+
+                ${estoque.quantidade > 0 ?
+
+                `
+                <button
+                    onclick="adicionar(${estoque.produto.id})">
+
+                    Adicionar
+
+                </button>
+                `
+
+                :
+
+                `
+                <p class="sem-estoque">
+
+                    ❌ Em falta
+
+                </p>
+                `
+                }
+            `;
+
+            lista.appendChild(div);
+        });
+    });
+}
+
+function adicionar(produtoId) {
+
+    if (!pedidoId || pedidoId == 0) {
+
+        alert(
+            "Faça login para adicionar produtos!"
+        );
+
+        window.location.href = "/login";
+
+        return;
+    }
+
+    fetch("/itens", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            quantidade: 1,
+
+            produto: {
+                id: produtoId
+            },
+
+            pedido: {
+                id: pedidoId
+            }
+        })
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        console.log(data);
+
+        carregarCarrinho();
+
+        carregarProdutos();
+    });
+}
+
+function remover(itemId) {
+
+    fetch("/itens/" + itemId, {
+
+        method: "DELETE"
+    })
+
+    .then(() => {
+
+        carregarCarrinho();
+
+        carregarProdutos();
+    });
+}
+
+function finalizarPedido() {
+
+    fetch("/pedidos/finalizar/" + pedidoId, {
+
+        method: "PUT"
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        window.location.href =
+            "/pagamento/" + pedidoId;
+    });
+}
+
+function carregarCarrinho() {
+
+    fetch("/pedidos")
+
+    .then(response => response.json())
+
+    .then(pedidos => {
+
+        const pedido =
+            pedidos.find(
+                p => p.id === pedidoId
+            );
+
+        const lista =
+            document.getElementById(
+                "carrinho"
+            );
+
+        lista.innerHTML = "";
+
+        let total = 0;
+
+        if (pedido && pedido.itens) {
+
+            pedido.itens.forEach(item => {
+
+                total +=
+                    item.produto.preco
+                    * item.quantidade;
+
+                const li =
+                    document.createElement("li");
+
+                li.innerHTML = `
+
+                    <div class="item-carrinho">
+
+                        <div class="info-item">
+
+                            <h4>
+
+                                ${item.produto.nome}
+
+                            </h4>
+
+                            <p>
+
+                                ${item.quantidade} x
+
+                                R$
+                                ${item.produto.preco
+                                    .toFixed(2)
+                                    .replace(".", ",")}
+
+                            </p>
+
+                        </div>
+
+                        <div class="acoes-item">
+
+                            <span class="preco-item">
+
+                                R$
+
+                                ${(item.produto.preco
+                                * item.quantidade)
+
+                                .toFixed(2)
+                                .replace(".", ",")}
+
+                            </span>
+
+                            <button
+
+                                class="btn-remover"
+
+                                onclick="remover(${item.id})">
+
+                                ❌
+
+                            </button>
+
+                        </div>
+
+                    </div>
+                `;
+
+                lista.appendChild(li);
+            });
+
+            const totalLi =
+                document.createElement("li");
+
+            totalLi.innerHTML = `
+
+                <h3>
+
+                    Total:
+
+                    R$
+                    ${total
+                        .toFixed(2)
+                        .replace(".", ",")}
+
+                </h3>
+            `;
+
+            lista.appendChild(totalLi);
+        }
+    });
+}
+
+carregarProdutos();
+
+carregarCarrinho();
+
+</script>
+
+</body>
+
+</html>

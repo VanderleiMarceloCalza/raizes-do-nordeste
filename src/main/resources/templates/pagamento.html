@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Pagamento</title>
+
+</head>
+
+<body>
+
+	<h1>Pagamento</h1>
+	<h2>
+
+		Total do pedido: R$ <span th:text="${#numbers.formatDecimal(valor, 1, 2)}"></span>
+
+	</h2>
+	<form action="/pagamento" method="post">
+
+		<input type="hidden" name="pedidoId" th:value="${pedidoId}"> <select
+			name="metodo">
+
+			<option value="PIX">PIX</option>
+
+			<option value="CARTAO">Cartão</option>
+
+			<option value="DINHEIRO">Dinheiro</option>
+
+		</select>
+
+		<button type="submit">Confirmar Pagamento</button>
+
+	</form>
+
+</body>
+
+</html>

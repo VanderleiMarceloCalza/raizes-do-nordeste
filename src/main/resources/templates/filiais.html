@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>
+
+        Escolha a Filial
+
+    </title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<h1>
+
+    Escolha sua unidade
+
+</h1>
+
+<div class="filiais">
+
+    <div th:each="filial : ${filiais}"
+         class="filial-box">
+
+        <h2 th:text="${filial.nome}"></h2>
+
+        <form action="/filiais"
+              method="post">
+
+            <input type="hidden"
+                   name="filialId"
+                   th:value="${filial.id}">
+
+            <button type="submit">
+
+                Entrar
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Gerente</title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/cardapio">Cardápio</a>
+
+        <a href="/logout">Sair</a>
+
+    </nav>
+
+</header>
+
+<h1>
+
+    Painel Gerente
+
+</h1>
+
+<div class="gerente-info">
+
+    <h3>
+
+        👤 Gerente:
+        <span th:text="${nome}"></span>
+
+    </h3>
+
+    <h3>
+
+        🏪 Filial:
+        <span th:text="${filial}"></span>
+
+    </h3>
+
+</div>
+
+<h2>
+
+    Pedidos
+
+</h2>
+
+<table border="1">
+
+    <tr>
+
+        <th>ID</th>
+
+        <th>Cliente</th>
+
+        <th>Data</th>
+
+        <th>Hora</th>
+
+        <th>Valor</th>
+
+        <th>Status</th>
+
+		<th>Atualizar</th>
+
+    </tr>
+
+    <tr th:each="pedido : ${pedidos}"
+        th:if="${pedido != null}">
+
+        <td th:text="${pedido.id}"></td>
+
+        <td th:text="${pedido.cliente.nome}"></td>
+
+        <td>
+
+            <span
+                th:if="${pedido.dataPedido != null}"
+
+                th:text="${#temporals.format(
+                    pedido.dataPedido,
+                    'dd/MM/yyyy'
+                )}">
+
+            </span>
+
+        </td>
+
+        <td>
+
+            <span
+                th:if="${pedido.dataPedido != null}"
+
+                th:text="${#temporals.format(
+                    pedido.dataPedido,
+                    'HH:mm'
+                )}">
+
+            </span>
+
+        </td>
+
+        <td>
+
+            R$
+
+            <span
+                th:text="${#numbers.formatDecimal(
+                    pedido.valorTotal,
+                    1,
+                    2
+                )}">
+
+            </span>
+
+        </td>
+
+        <td th:text="${pedido.status}"></td>
+
+<td>
+
+    <form action="/gerente/status"
+          method="post">
+
+        <input type="hidden"
+               name="pedidoId"
+               th:value="${pedido.id}">
+
+        <select name="status">
+
+    <option value="PENDENTE"
+        th:selected="${pedido.status == 'PENDENTE'}">
+
+        PENDENTE
+
+    </option>
+
+    <option value="EM PREPARO"
+        th:selected="${pedido.status == 'EM PREPARO'}">
+
+        EM PREPARO
+
+    </option>
+
+    <option value="SAIU PARA ENTREGA"
+        th:selected="${pedido.status == 'SAIU PARA ENTREGA'}">
+
+        SAIU PARA ENTREGA
+
+    </option>
+
+    <option value="FINALIZADO"
+        th:selected="${pedido.status == 'FINALIZADO'}">
+
+        FINALIZADO
+
+    </option>
+
+</select>
+
+        <button type="submit">
+
+            Salvar
+
+        </button>
+
+    </form>
+
+</td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>

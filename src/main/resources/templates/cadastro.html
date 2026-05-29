@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Cadastro</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+	<header>
+
+		<img src="/images/logo.png" class="logo">
+
+		<nav>
+
+			<a href="/">Home</a> <a href="/cardapio">Cardápio</a> <span
+				class="usuario"> Olá Vanderlei </span> <a href="/logout"> Sair </a>
+
+		</nav>
+
+	</header>
+	<div class="container">
+
+		<h1>📝 Cadastro</h1>
+
+		<form action="/clientes" method="post">
+
+			<input type="text" name="nome" placeholder="Nome"> <input
+				type="email" name="email" placeholder="Email"> <input
+				type="password" name="senha" placeholder="Senha"> <label>
+
+				Tipo: </label> <input type="hidden" name="tipo" value="CLIENTE"> 
+
+				
+			<button type="submit">Cadastrar</button>
+
+		</form>
+
+
+
+		<p>
+			Já possui conta? <a href="/login">Entrar</a>
+		</p>
+
+	</div>
+
+</body>
+
+</html>

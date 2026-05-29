@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Pedido Confirmado</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+	<h1>🎉 Pedido Confirmado!</h1>
+
+	<h2>Obrigado pela compra 😄</h2>
+
+	<p>Seu pedido foi recebido e será preparado em breve.</p>
+
+	<p>
+
+		Forma de pagamento: <strong th:text="${metodo}"></strong>
+
+	</p>
+
+	<p>
+
+		Valor: R$ <strong th:text="${#numbers.formatDecimal(valor, 1, 2)}"></strong>
+
+	</p>
+
+	<p>
+
+		Status: <strong th:text="${status}"></strong>
+
+	</p>
+
+	<p>
+
+		Código: <strong th:text="${codigo}"></strong>
+
+	</p>
+
+	<a href="/"> Voltar para Home </a>
+	<a href="/acompanhar"> Acompanhar Pedido</a>
+	
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Administrador</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+	<header>
+
+		<nav class="menu">
+
+			<div class="menu-esquerda">
+
+				<a href="/">Home</a> <a href="/cardapio"> Cardápio </a>
+
+			</div>
+
+			<div class="menu-direita">
+
+				<a href="/logout"> Sair </a>
+
+			</div>
+
+		</nav>
+
+	</header>
+
+	<div class="admin-container">
+
+		<h1>⚙ Painel Administrador</h1>
+
+		<div class="admin-form">
+
+			<h2>Novo Produto</h2>
+
+			<form action="/admin/produto" method="post">
+
+				<input type="text" name="nome" placeholder="Nome do produto"
+					required> <input type="number" step="0.01" name="preco"
+					placeholder="Preço" required>
+
+
+
+				<button type="submit">Salvar Produto</button>
+
+			</form>
+
+			<div class="admin-form">
+
+				<h2>Novo Funcionário</h2>
+
+				<form action="/admin/funcionario" method="post">
+
+					<input type="text" name="nome" placeholder="Nome" required>
+
+					<input type="email" name="email" placeholder="Email" required>
+
+					<input type="password" name="senha" placeholder="Senha" required>
+
+					<select name="tipo" required>
+
+						<option value="GERENTE">Gerente</option>
+						<option value="ATENDENTE">Atendente</option>
+						<option value="ADMIN">Administrador</option>
+
+					</select> <select name="filialId">
+
+						<option value="">Sem filial</option>
+
+						<option th:each="filial : ${filiais}" th:value="${filial.id}"
+							th:text="${filial.nome}"></option>
+
+					</select>
+
+					<button type="submit">Criar Funcionário</button>
+
+				</form>
+
+			</div>
+
+		</div>
+
+		<div class="admin-tabela">
+
+			<h2>Produtos</h2>
+
+			<table>
+
+				<tr>
+
+					<th>ID</th>
+
+					<th>Nome</th>
+
+					<th>Preço</th>
+
+					<th>Ações</th>
+
+				</tr>
+
+				<tr th:each="produto : ${produtos}">
+
+					<td th:text="${produto.id}"></td>
+
+					<td th:text="${produto.nome}"></td>
+
+					<td>R$ <span
+						th:text="${#numbers.formatDecimal(produto.preco,1,2)}"> </span>
+
+					</td>
+
+					<td><a th:href="@{/admin/excluir/{id}(id=${produto.id})}">
+
+							❌ Excluir </a></td>
+
+				</tr>
+
+			</table>
+
+		</div>
+
+		<div class="admin-tabela">
+
+			<h2>Estoque das Filiais</h2>
+
+			<div th:each="filial : ${filiais}" class="filial-estoque">
+
+				<h3>
+
+					🏪 <span th:text="${filial.nome}"></span>
+
+				</h3>
+
+				<table>
+
+					<tr>
+
+						<th>Produto</th>
+
+						<th>Quantidade</th>
+
+						<th>Repor</th>
+
+					</tr>
+
+					<tr th:each="estoque : ${estoques}"
+						th:if="${estoque.filial.id == filial.id}">
+
+						<td th:text="${estoque.produto.nome}"></td>
+
+						<td th:text="${estoque.quantidade}"></td>
+
+						<td>
+
+							<form action="/admin/estoque" method="post">
+
+								<input type="hidden" name="id" th:value="${estoque.id}">
+
+								<input type="number" name="quantidade" placeholder="+ estoque"
+									required>
+
+								<button type="submit">Repor</button>
+
+							</form>
+
+						</td>
+
+					</tr>
+
+				</table>
+
+				<br>
+				<br>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

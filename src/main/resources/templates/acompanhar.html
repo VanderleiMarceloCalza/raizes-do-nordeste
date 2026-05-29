@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>
+
+        Acompanhar Pedido
+
+    </title>
+
+    <link rel="stylesheet"
+          href="/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <a href="/">
+
+            Home
+
+        </a>
+
+        <a href="/cardapio">
+
+            Cardápio
+
+        </a>
+
+        <a th:if="${session.tipo == 'CLIENTE'}"
+           href="/acompanhar">
+
+            Meus Pedidos
+
+        </a>
+
+        <a th:if="${session.tipo == 'ATENDENTE'}"
+           href="/gerente">
+
+            Pedidos Loja
+
+        </a>
+
+        <a href="/logout">
+
+            Sair
+
+        </a>
+
+    </nav>
+
+</header>
+
+<h1>
+
+    Meus Pedidos
+
+</h1>
+
+<div th:each="pedido : ${pedidos}"
+     class="pedido-box">
+
+    <h3>
+
+        Pedido #
+
+        <span th:text="${pedido.id}"></span>
+
+    </h3>
+
+    <p>
+
+        Cliente:
+
+        <strong
+            th:text="${pedido.cliente.nome}">
+
+        </strong>
+
+    </p>
+
+    <p>
+
+        Data:
+
+        <span
+            th:text="${#temporals.format(
+                pedido.dataPedido,
+                'dd/MM/yyyy HH:mm'
+            )}">
+
+        </span>
+
+    </p>
+
+    <p>
+
+        Status:
+
+        <strong
+            th:text="${pedido.status}">
+
+        </strong>
+
+    </p>
+
+    <p>
+
+        Valor:
+
+        R$
+
+        <span
+            th:text="${#numbers.formatDecimal(
+                pedido.valorTotal,
+                1,
+                2
+            )}">
+
+        </span>
+
+    </p>
+
+    <p>
+
+        Filial:
+
+        <span th:if="${pedido.filial != null}"
+              th:text="${pedido.filial.nome}">
+
+        </span>
+
+    </p>
+
+    <h4>
+
+        Itens
+
+    </h4>
+
+    <div th:if="${pedido.itens != null}">
+
+        <div th:each="item : ${pedido.itens}">
+
+            <p>
+
+                <span
+                    th:text="${item.produto.nome}">
+
+                </span>
+
+                x
+
+                <span
+                    th:text="${item.quantidade}">
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

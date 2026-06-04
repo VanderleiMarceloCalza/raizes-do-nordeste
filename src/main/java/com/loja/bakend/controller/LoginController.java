@@ -1,5 +1,6 @@
 package com.loja.bakend.controller;
-
+import com.loja.bakend.util.SenhaUtil;
+import com.loja.bakend.model.CanalPedido;
 import com.loja.bakend.model.Cliente;
 import com.loja.bakend.model.Pedido;
 import com.loja.bakend.repository.ClienteRepository;
@@ -20,14 +21,12 @@ public class LoginController {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 
-	// ABRE A PÁGINA LOGIN
 	@GetMapping("/login")
 	public String login() {
 
 		return "login";
 	}
 
-	// PROCESSA LOGIN
 	@PostMapping("/login")
 	public String entrar(
 
@@ -37,15 +36,30 @@ public class LoginController {
 
 			HttpSession session) {
 
-		Cliente cliente = clienteRepository.findByEmailAndSenha(email, senha).orElse(null);
+		Cliente cliente =
 
-		if (cliente == null) {
+			    clienteRepository
+			        .findByEmail(email)
+			        .orElse(null);
 
-			return "redirect:/login";
-		}
+			if(cliente == null) {
+
+			    return "redirect:/login";
+			}
+
+			if(!SenhaUtil.verificar(
+
+			        senha,
+
+			        cliente.getSenha())) {
+
+			    return "redirect:/login";
+			}
 
 		Pedido pedido = new Pedido();
-
+		pedido.setCanalPedido(
+			    CanalPedido.WEB
+			);
 		pedido.setCliente(cliente);
 
 		pedido.setStatus("PENDENTE");

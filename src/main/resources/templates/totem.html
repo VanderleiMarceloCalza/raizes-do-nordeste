@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Totem Autoatendimento</title>
+
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header>
+
+    <img src="/images/logo.png" class="logo">
+
+    <div class="totem-header">
+
+        <h1>
+            🍔 Bem-vindo à  Nossa Loja do Centro
+        </h1>
+
+        <h3>
+            Faça seu pedido pelo nosso
+            Totem de Autoatendimento
+        </h3>
+
+    </div>
+
+</header>
+
+<div class="conteudo">
+
+    <div class="produtos-area">
+
+        <h2>Cardápio</h2>
+
+        <div id="lista" class="produtos"></div>
+
+    </div>
+
+    <div class="carrinho-box">
+
+        <h2>🛒 Carrinho</h2>
+
+        <ul id="carrinho"></ul>
+
+        <button onclick="finalizarPedido()">
+            ✅ Finalizar Pedido
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+let pedidoId = null;
+
+async function criarPedido() {
+
+    const response = await fetch(
+        "/api/totem/pedido",
+        {
+            method: "POST"
+        }
+    );
+
+    const pedido = await response.json();
+
+    pedidoId = pedido.id;
+
+    console.log(
+        "Pedido Totem:",
+        pedidoId
+    );
+}
+
+function carregarProdutos() {
+
+    fetch("/api/totem/produtos")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        const lista =
+            document.getElementById(
+                "lista"
+            );
+
+        lista.innerHTML = "";
+
+        data.forEach(estoque => {
+
+            const div =
+                document.createElement("div");
+
+            div.classList.add(
+                "produto"
+            );
+
+            div.innerHTML = `
+
+                <h3>
+                    ${estoque.produto.nome}
+                </h3>
+
+                <p>
+                    R$
+                    ${estoque.produto.preco
+                        .toFixed(2)
+                        .replace(".", ",")}
+                </p>
+
+                <p>
+                    Estoque:
+                    ${estoque.quantidade}
+                </p>
+
+                ${
+                    estoque.quantidade > 0
+
+                    ?
+
+                    `<button onclick="adicionar(${estoque.produto.id})">
+
+                        Adicionar
+
+                    </button>`
+
+                    :
+
+                    `<p class="sem-estoque">
+
+                        ❌ Em falta
+
+                    </p>`
+                }
+            `;
+
+            lista.appendChild(div);
+        });
+    });
+}
+
+function adicionar(produtoId) {
+
+    fetch("/itens", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type":
+                "application/json"
+        },
+
+        body: JSON.stringify({
+
+            quantidade: 1,
+
+            produto: {
+                id: produtoId
+            },
+
+            pedido: {
+                id: pedidoId
+            }
+        })
+    })
+
+    .then(response => response.json())
+
+    .then(() => {
+
+        carregarCarrinho();
+
+        carregarProdutos();
+    });
+}
+
+function carregarCarrinho() {
+
+    if(!pedidoId) return;
+
+    fetch(
+
+        "/api/totem/pedido/"
+        + pedidoId
+    )
+
+    .then(response => response.json())
+
+    .then(pedido => {
+
+        const lista =
+            document.getElementById(
+                "carrinho"
+            );
+
+        lista.innerHTML = "";
+
+        let total = 0;
+
+        if(pedido.itens) {
+
+            pedido.itens.forEach(item => {
+
+                total +=
+
+                    item.produto.preco
+                    * item.quantidade;
+
+                const li =
+                    document.createElement(
+                        "li"
+                    );
+
+                li.innerHTML = `
+
+                    ${item.produto.nome}
+
+                    -
+
+                    ${item.quantidade}
+
+                    x
+
+                    R$
+
+                    ${item.produto.preco
+                        .toFixed(2)
+                        .replace(".", ",")}
+                `;
+
+                lista.appendChild(li);
+            });
+        }
+
+        const totalLi =
+            document.createElement("li");
+
+        totalLi.innerHTML =
+
+            `<h3>
+
+                Total:
+
+                R$
+                ${total
+                    .toFixed(2)
+                    .replace(".", ",")}
+
+            </h3>`;
+
+        lista.appendChild(
+            totalLi
+        );
+    });
+}
+
+function finalizarPedido() {
+
+    fetch(
+
+        "/api/totem/pedido/"
+        + pedidoId
+        + "/finalizar",
+
+        {
+            method: "PUT"
+        }
+    )
+
+    .then(response => response.json())
+
+    .then(() => {
+
+        alert(
+            "Pedido enviado para cozinha!"
+        );
+
+        location.reload();
+    });
+}
+
+criarPedido();
+
+carregarProdutos();
+
+</script>
+
+</body>
+
+</html>

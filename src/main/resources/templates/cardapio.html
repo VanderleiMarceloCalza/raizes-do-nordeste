@@ -13,88 +13,95 @@
 
 <body>
 
-<header>
+	<header>
 
-    <img src="/images/logo.png" class="logo">
+		<img src="/images/logo.png" class="logo">
 
-    <nav class="menu">
+		<nav class="menu">
 
-    <div class="menu-esquerda">
-	
-        <a href="/">Home</a>
+			<div class="menu-esquerda">
 
-        <a href="/cardapio">Cardápio</a>
-		<a href="/acompanhar">
+				<a href="/">Home</a> <a href="/cardapio">Cardápio</a> <a
+					href="/acompanhar"> Meus Pedidos </a> <a href="/filiais">Trocar
+					Filial</a>
 
-        Meus Pedidos
+			</div>
 
-    </a>
-        <a href="/filiais">Trocar Filial</a>
+			<div class="menu-direita">
 
-    </div>
+				<span class="usuario"> 👤 <span th:text="${nome}"></span> ⭐
+					Pontos: <span th:text="${pontos}"></span>
+				</span><a href="/logout"> 👤 Sair </a>
 
-    <div class="menu-direita">
+			</div>
 
-        <span class="usuario">
-        	👤
-        <span th:text="${nome}"></span>
-			
-        </span><a href="/logout">
+		</nav>
 
-           	👤 Sair
+	</header>
 
-        </a>
+	<div class="conteudo">
 
-    </div>
+		<div class="produtos-area">
 
-</nav>
+			<h1>🍔 Cardápio</h1>
 
-</header>
+			<div id="lista" class="produtos"></div>
 
-<div class="conteudo">
+		</div>
 
-    <div class="produtos-area">
+		<div class="carrinho-box">
 
-        <h1>
+			<h2>🛒 Carrinho</h2>
 
-            🍔 Cardápio
+			<ul id="carrinho"></ul>
 
-        </h1>
+			<div class="fidelidade-box">
 
-        <div id="lista"
-             class="produtos">
+				<h3>⭐ Fidelidade</h3>
 
-        </div>
+				<p>
+					Você possui <span th:text="${pontos}"></span> pontos
+				</p>
 
-    </div>
+				<p>
+					Equivalente a R$ <span
+						th:text="${pontos != null ? #numbers.formatDecimal(pontos * 0.10,1,2) : '0,00'}"></span>
+				</p>
 
-    <div class="carrinho-box">
+				<label> <input type="checkbox" id="usarPontos">
 
-        <h2>
+					Utilizar meus pontos
 
-            🛒 Carrinho
+				</label>
 
-        </h2>
+				<p id="descontoFidelidade">Desconto: R$ 0,00</p>
 
-        <ul id="carrinho"></ul>
+				<p id="totalComDesconto">Total com desconto: R$ 0,00</p>
 
-        <button onclick="finalizarPedido()">
+			</div>
 
-            ✅ Finalizar Pedido
+			<button onclick="finalizarPedido()">✅ Finalizar Pedido</button>
 
-        </button>
+		</div>
 
-    </div>
+	</div>
 
-</div>
-
-<script th:inline="javascript">
+	<script th:inline="javascript">
 
 let pedidoId = /*[[${pedidoId}]]*/ 0;
 
+let filialId =
+    /*[[${filialId}]]*/ 0;
+
+let pontosCliente =
+    /*[[${pontos}]]*/ 0;
+
 function carregarProdutos() {
 
-    fetch("/produtos")
+	fetch(
+		    "/api/estoque/filial/"
+		    + filialId
+		)
 
     .then(response => response.json())
 
@@ -228,23 +235,39 @@ function remover(itemId) {
 
 function finalizarPedido() {
 
-    fetch("/pedidos/finalizar/" + pedidoId, {
+    const usarPontos =
 
-        method: "PUT"
-    })
+        document.getElementById(
+            "usarPontos"
+        ).checked;
+
+    fetch(
+
+    	"/api/pedidos/finalizar/"
+        + pedidoId
+        + "?usarPontos="
+        + usarPontos,
+
+        {
+
+            method: "PUT"
+        }
+    )
 
     .then(response => response.json())
 
     .then(data => {
 
         window.location.href =
-            "/pagamento/" + pedidoId;
+
+            "/pagamento/"
+            + pedidoId;
     });
 }
 
 function carregarCarrinho() {
 
-    fetch("/pedidos")
+    fetch("/api/pedidos")
 
     .then(response => response.json())
 
@@ -276,26 +299,20 @@ function carregarCarrinho() {
                     document.createElement("li");
 
                 li.innerHTML = `
-
                     <div class="item-carrinho">
 
                         <div class="info-item">
 
                             <h4>
-
                                 ${item.produto.nome}
-
                             </h4>
 
                             <p>
-
                                 ${item.quantidade} x
-
                                 R$
                                 ${item.produto.preco
                                     .toFixed(2)
                                     .replace(".", ",")}
-
                             </p>
 
                         </div>
@@ -315,9 +332,7 @@ function carregarCarrinho() {
                             </span>
 
                             <button
-
                                 class="btn-remover"
-
                                 onclick="remover(${item.id})">
 
                                 ❌
@@ -331,6 +346,44 @@ function carregarCarrinho() {
 
                 lista.appendChild(li);
             });
+
+            const usarPontos =
+                document.getElementById(
+                    "usarPontos"
+                );
+
+            let desconto = 0;
+
+            if(usarPontos &&
+               usarPontos.checked) {
+
+                desconto =
+                    pontosCliente * 0.10;
+
+                if(desconto > total) {
+
+                    desconto = total;
+                }
+            }
+
+            document.getElementById(
+                "descontoFidelidade"
+            ).innerText =
+
+                "Desconto: R$ " +
+
+                desconto.toFixed(2)
+                .replace(".", ",");
+
+            document.getElementById(
+                "totalComDesconto"
+            ).innerText =
+
+                "Total com desconto: R$ " +
+
+                (total - desconto)
+                .toFixed(2)
+                .replace(".", ",");
 
             const totalLi =
                 document.createElement("li");
@@ -358,6 +411,16 @@ carregarProdutos();
 
 carregarCarrinho();
 
+document
+.getElementById(
+    "usarPontos"
+)
+.addEventListener(
+
+    "change",
+
+    carregarCarrinho
+);
 </script>
 
 </body>

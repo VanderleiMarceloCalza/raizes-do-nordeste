@@ -16,7 +16,9 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    private Boolean participaFidelidade = false;
+    
     public Filial getFilial() {
 		return filial;
 	}
@@ -28,9 +30,10 @@ public class Cliente {
 	private String nome;
     @Column(unique = true)
     private String email;
-
+    
     private String senha;
     private String tipo;
+    private Integer pontos = 0;
     public Long getId() {
         return id;
     }
@@ -70,5 +73,20 @@ public class Cliente {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+	public Integer getPontos() {
+	    return pontos;
+	}
+
+	public void setPontos(Integer pontos) {
+	    this.pontos = pontos;
+	}
+
+	public Boolean getParticipaFidelidade() {
+		return participaFidelidade;
+	}
+
+	public void setParticipaFidelidade(Boolean participaFidelidade) {
+		this.participaFidelidade = participaFidelidade;
 	}
 }

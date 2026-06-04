@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<
+
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -24,15 +24,25 @@
 
 		<h1>📝 Cadastro</h1>
 
-		<form action="/clientes" method="post">
+		<form th:action="@{/cadastro}" method="post">
 
 			<input type="text" name="nome" placeholder="Nome"> <input
 				type="email" name="email" placeholder="Email"> <input
-				type="password" name="senha" placeholder="Senha"> <label>
+				type="password" name="senha" placeholder="Senha"> <input
+				type="hidden" name="tipo" value="CLIENTE">
 
-				Tipo: </label> <input type="hidden" name="tipo" value="CLIENTE"> 
+			<div class="fidelidade">
 
-				
+				<input type="hidden" name="participaFidelidade" value="false">
+
+				<label> <input type="checkbox" name="participaFidelidade"
+					value="true" checked> Desejo participar do programa de
+					fidelidade
+
+				</label>
+
+			</div>
+
 			<button type="submit">Cadastrar</button>
 
 		</form>

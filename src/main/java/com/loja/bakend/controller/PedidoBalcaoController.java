@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.loja.bakend.model.CanalPedido;
 import com.loja.bakend.model.Cliente;
 import com.loja.bakend.model.Filial;
 import com.loja.bakend.model.Pedido;
@@ -110,7 +111,11 @@ public class PedidoBalcaoController {
 
         Pedido pedido =
             new Pedido();
-
+        
+        pedido.setCanalPedido(
+        	    CanalPedido.BALCAO
+        	);
+        
         pedido.setCliente(
             cliente
         );

@@ -57,9 +57,17 @@ public class ItemPedidoController {
 
         Long filialId =
 
-            (Long) session.getAttribute(
-                "filialId"
-            );
+        	    (Long) session.getAttribute(
+        	        "filialId"
+        	    );
+
+        	if(filialId == null) {
+
+        	    filialId =
+
+        	        pedido.getFilial()
+        	              .getId();
+        	}
 
         Estoque estoque =
 

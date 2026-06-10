@@ -295,6 +295,28 @@ O banco de dados enviado já contém dados de demonstração, incluindo usuário
 http://localhost:8080
 
 ---
+## Usuários de Teste
+
+Para facilitar a validação das funcionalidades do sistema, foram disponibilizados usuários com diferentes perfis de acesso.
+
+| Perfil    | Funcionalidade                                   |
+| --------- | -----------------------------------------------  |
+| ADMIN     | Administração geral do sistema                   |
+| GERENTE   | Gestão de estoque, clientes e operação           |
+| ATENDENTE | Realização e acompanhamento de pedidos no balcão |
+| CLIENTE   | Realização de pedidos e fidelização              |
+
+Exemplo de credenciais:
+
+| Perfil           | E-mail                                                | Senha  |
+| ---------------- | ----------------------------------------------------- | ------ |
+| ADMIN            | [admin@loja.com](mailto:admin@loja.com)               | 123456 |
+| GERENTE-CENTRO   | [gerente@lojaCentro.com](mailto:gerente@loja.com)     | 123456 |
+| ATENDENTE-CENTRO | [atendente@lojaCentro.com](mailto:atendente@loja.com) | 123456 |
+| CLIENTE          | [cliente@loja.com](mailto:cliente@loja.com)           | 123456 |
+
+Obs.: As credenciais podem ser alteradas diretamente no banco de dados para fins de teste.
+
 
 ## Autor
 

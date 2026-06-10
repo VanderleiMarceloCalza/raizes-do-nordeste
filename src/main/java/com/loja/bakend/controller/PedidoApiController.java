@@ -132,7 +132,14 @@ public class PedidoApiController {
     public Pedido criar(
 
             @RequestBody Pedido pedido) {
+    	
+    	if(pedido.getCanalPedido() == null) {
 
+    	    throw new IllegalArgumentException(
+    	        "Canal do pedido é obrigatório"
+    	    );
+    	}
+    	
         if (pedido.getCliente() == null
                 || pedido.getCliente().getId() == null) {
 

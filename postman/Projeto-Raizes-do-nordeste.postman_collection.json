@@ -1,0 +1,4261 @@
+{
+  "info": {
+    "_postman_id": "2941186f-d2f1-441b-9ed4-a40c7118b2e1",
+    "name": "Projeto-Raizes-do-nordeste",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54572757",
+    "_collection_link": "https://go.postman.co/collection/54572757-2941186f-d2f1-441b-9ed4-a40c7118b2e1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "totem",
+          "item": [
+            {
+              "name": "pedido",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "finalizar",
+                      "item": [
+                        {
+                          "name": "finalizar Pedido",
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/totem/pedido/:id/finalizar",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "totem",
+                                "pedido",
+                                ":id",
+                                "finalizar"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/totem/pedido/:id/finalizar",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "totem",
+                                    "pedido",
+                                    ":id",
+                                    "finalizar"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "3283"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                            },
+                            {
+                              "name": "Bad Request",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/totem/pedido/:id/finalizar",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "totem",
+                                    "pedido",
+                                    ":id",
+                                    "finalizar"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "3283"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                            },
+                            {
+                              "name": "Not Found",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "*/*"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/totem/pedido/:id/finalizar",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "totem",
+                                    "pedido",
+                                    ":id",
+                                    "finalizar"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id",
+                                      "value": "3283"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "*/*"
+                                }
+                              ],
+                              "cookie": [],
+                              "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "buscar Pedido",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/pedido/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "pedido",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/totem/pedido/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "totem",
+                                "pedido",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                        },
+                        {
+                          "name": "Bad Request",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/totem/pedido/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "totem",
+                                "pedido",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        },
+                        {
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/totem/pedido/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "totem",
+                                "pedido",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "criar Pedido",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/totem/pedido",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "totem",
+                        "pedido"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/pedido",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "pedido"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/pedido",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "pedido"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/pedido",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "pedido"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "produtos",
+              "item": [
+                {
+                  "name": "listar Produtos",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/totem/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "totem",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/produtos",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "produtos"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n  {\n    \"id\": 8150,\n    \"produto\": {\n      \"id\": 8887,\n      \"estoque\": 6524,\n      \"nome\": \"string\",\n      \"preco\": 8492.263664234915\n    },\n    \"filial\": {\n      \"id\": 7940,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 8911\n  },\n  {\n    \"id\": 2084,\n    \"produto\": {\n      \"id\": 9726,\n      \"estoque\": 3242,\n      \"nome\": \"string\",\n      \"preco\": 2195.255442498828\n    },\n    \"filial\": {\n      \"id\": 2340,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 6290\n  }\n]"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/produtos",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "produtos"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/totem/produtos",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "totem",
+                            "produtos"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pedidos",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "status",
+                  "item": [
+                    {
+                      "name": "atualizar Status",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/:id/status?status=string",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            ":id",
+                            "status"
+                          ],
+                          "query": [
+                            {
+                              "key": "status",
+                              "value": "string"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/:id/status?status=string",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                ":id",
+                                "status"
+                              ],
+                              "query": [
+                                {
+                                  "key": "status",
+                                  "value": "string"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                        },
+                        {
+                          "name": "Bad Request",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/:id/status?status=string",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                ":id",
+                                "status"
+                              ],
+                              "query": [
+                                {
+                                  "key": "status",
+                                  "value": "string"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        },
+                        {
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/:id/status?status=string",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                ":id",
+                                "status"
+                              ],
+                              "query": [
+                                {
+                                  "key": "status",
+                                  "value": "string"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "buscar 1",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "finalizar",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "finalizar",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/finalizar/:id?usarPontos=false",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            "finalizar",
+                            ":id"
+                          ],
+                          "query": [
+                            {
+                              "key": "usarPontos",
+                              "value": "false"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/finalizar/:id?usarPontos=false",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                "finalizar",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "key": "usarPontos",
+                                  "value": "false"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                        },
+                        {
+                          "name": "Bad Request",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/finalizar/:id?usarPontos=false",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                "finalizar",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "key": "usarPontos",
+                                  "value": "false"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        },
+                        {
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/pedidos/finalizar/:id?usarPontos=false",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "pedidos",
+                                "finalizar",
+                                ":id"
+                              ],
+                              "query": [
+                                {
+                                  "key": "usarPontos",
+                                  "value": "false"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "criar",
+              "item": [
+                {
+                  "name": "criar Pedido 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos/criar",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos",
+                        "criar"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/criar",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            "criar"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/criar",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            "criar"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/pedidos/criar",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "pedidos",
+                            "criar"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "listar 1",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/pedidos?canalPedido=APP",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ],
+                  "query": [
+                    {
+                      "key": "canalPedido",
+                      "value": "APP"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos?canalPedido=APP",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ],
+                      "query": [
+                        {
+                          "key": "canalPedido",
+                          "value": "APP"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"cliente\": {\n      \"filial\": {\n        \"id\": 1157,\n        \"nome\": \"string\"\n      },\n      \"id\": 9583,\n      \"participaFidelidade\": true,\n      \"nome\": \"string\",\n      \"email\": \"string\",\n      \"senha\": \"string\",\n      \"tipo\": \"string\",\n      \"pontos\": 2886\n    },\n    \"filial\": {\n      \"id\": 983,\n      \"nome\": \"string\"\n    },\n    \"numeroSenha\": \"string\",\n    \"itens\": [\n      {\n        \"id\": 4637,\n        \"quantidade\": 1835,\n        \"precoUnitario\": 8446.819571924801,\n        \"produto\": {\n          \"id\": 4830,\n          \"estoque\": 1953,\n          \"nome\": \"string\",\n          \"preco\": 9264.465502088053\n        },\n        \"pedido\": {\n          \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n        }\n      },\n      {\n        \"id\": 6563,\n        \"quantidade\": 7639,\n        \"precoUnitario\": 5690.641609632759,\n        \"produto\": {\n          \"id\": 8719,\n          \"estoque\": 7393,\n          \"nome\": \"string\",\n          \"preco\": 1306.6274797882438\n        },\n        \"pedido\": {\n          \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n        }\n      }\n    ],\n    \"id\": 4132,\n    \"status\": \"string\",\n    \"valorTotal\": 6772.360265695768,\n    \"dataPedido\": \"1985-06-20T19:42:25.947Z\",\n    \"canalPedido\": \"PICKUP\",\n    \"codigoPagamento\": \"string\",\n    \"statusPagamento\": \"string\",\n    \"dataPagamento\": \"2002-03-21T13:29:12.487Z\"\n  },\n  {\n    \"cliente\": {\n      \"filial\": {\n        \"id\": 3827,\n        \"nome\": \"string\"\n      },\n      \"id\": 1122,\n      \"participaFidelidade\": true,\n      \"nome\": \"string\",\n      \"email\": \"string\",\n      \"senha\": \"string\",\n      \"tipo\": \"string\",\n      \"pontos\": 886\n    },\n    \"filial\": {\n      \"id\": 5257,\n      \"nome\": \"string\"\n    },\n    \"numeroSenha\": \"string\",\n    \"itens\": [\n      {\n        \"id\": 8247,\n        \"quantidade\": 7567,\n        \"precoUnitario\": 4758.573073986032,\n        \"produto\": {\n          \"id\": 7944,\n          \"estoque\": 4259,\n          \"nome\": \"string\",\n          \"preco\": 4808.645876503425\n        },\n        \"pedido\": {\n          \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n        }\n      },\n      {\n        \"id\": 5796,\n        \"quantidade\": 538,\n        \"precoUnitario\": 9677.155302413285,\n        \"produto\": {\n          \"id\": 6640,\n          \"estoque\": 5561,\n          \"nome\": \"string\",\n          \"preco\": 485.4653161469713\n        },\n        \"pedido\": {\n          \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n        }\n      }\n    ],\n    \"id\": 2828,\n    \"status\": \"string\",\n    \"valorTotal\": 8445.446554501237,\n    \"dataPedido\": \"1976-08-08T11:02:37.654Z\",\n    \"canalPedido\": \"BALCAO\",\n    \"codigoPagamento\": \"string\",\n    \"statusPagamento\": \"string\",\n    \"dataPagamento\": \"1981-12-22T07:17:04.498Z\"\n  }\n]"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos?canalPedido=APP",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ],
+                      "query": [
+                        {
+                          "key": "canalPedido",
+                          "value": "APP"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos?canalPedido=APP",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ],
+                      "query": [
+                        {
+                          "key": "canalPedido",
+                          "value": "APP"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            },
+            {
+              "name": "criar 1",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/pedidos",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"cliente\": {\n    \"filial\": {\n      \"id\": 6451,\n      \"nome\": \"string\"\n    },\n    \"id\": 7019,\n    \"participaFidelidade\": false,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3975\n  },\n  \"filial\": {\n    \"id\": 1337,\n    \"nome\": \"string\"\n  },\n  \"numeroSenha\": \"string\",\n  \"itens\": [\n    {\n      \"id\": 731,\n      \"quantidade\": 2124,\n      \"precoUnitario\": 750.100228734738,\n      \"produto\": {\n        \"id\": 1772,\n        \"estoque\": 827,\n        \"nome\": \"string\",\n        \"preco\": 4839.940937430282\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    },\n    {\n      \"id\": 5655,\n      \"quantidade\": 9471,\n      \"precoUnitario\": 2960.7062719687538,\n      \"produto\": {\n        \"id\": 3856,\n        \"estoque\": 3521,\n        \"nome\": \"string\",\n        \"preco\": 4179.193721487053\n      },\n      \"pedido\": {\n        \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n      }\n    }\n  ],\n  \"id\": 6937,\n  \"status\": \"string\",\n  \"valorTotal\": 9743.280681517692,\n  \"dataPedido\": \"2013-05-29T22:44:44.418Z\",\n  \"canalPedido\": \"BALCAO\",\n  \"codigoPagamento\": \"string\",\n  \"statusPagamento\": \"string\",\n  \"dataPagamento\": \"2015-01-27T05:10:13.648Z\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pedidos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pedidos"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "estoque",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "buscar",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "atualizar",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "filial",
+              "item": [
+                {
+                  "name": "{filialId}",
+                  "item": [
+                    {
+                      "name": "listar Por Filial",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/estoque/filial/:filialId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "estoque",
+                            "filial",
+                            ":filialId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "filialId",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/estoque/filial/:filialId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "estoque",
+                                "filial",
+                                ":filialId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "filialId",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": 8150,\n    \"produto\": {\n      \"id\": 8887,\n      \"estoque\": 6524,\n      \"nome\": \"string\",\n      \"preco\": 8492.263664234915\n    },\n    \"filial\": {\n      \"id\": 7940,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 8911\n  },\n  {\n    \"id\": 2084,\n    \"produto\": {\n      \"id\": 9726,\n      \"estoque\": 3242,\n      \"nome\": \"string\",\n      \"preco\": 2195.255442498828\n    },\n    \"filial\": {\n      \"id\": 2340,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 6290\n  }\n]"
+                        },
+                        {
+                          "name": "Bad Request",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/estoque/filial/:filialId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "estoque",
+                                "filial",
+                                ":filialId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "filialId",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        },
+                        {
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/estoque/filial/:filialId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "estoque",
+                                "filial",
+                                ":filialId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "filialId",
+                                  "value": "3283"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "listar 2",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/estoque",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "estoque"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 8150,\n    \"produto\": {\n      \"id\": 8887,\n      \"estoque\": 6524,\n      \"nome\": \"string\",\n      \"preco\": 8492.263664234915\n    },\n    \"filial\": {\n      \"id\": 7940,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 8911\n  },\n  {\n    \"id\": 2084,\n    \"produto\": {\n      \"id\": 9726,\n      \"estoque\": 3242,\n      \"nome\": \"string\",\n      \"preco\": 2195.255442498828\n    },\n    \"filial\": {\n      \"id\": 2340,\n      \"nome\": \"string\"\n    },\n    \"quantidade\": 6290\n  }\n]"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            },
+            {
+              "name": "salvar 1",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/estoque",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "estoque"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 9864,\n  \"produto\": {\n    \"id\": 2567,\n    \"estoque\": 5804,\n    \"nome\": \"string\",\n    \"preco\": 1532.381440288495\n  },\n  \"filial\": {\n    \"id\": 4184,\n    \"nome\": \"string\"\n  },\n  \"quantidade\": 3801\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/estoque",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "estoque"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "produtos",
+          "item": [
+            {
+              "name": "listar",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/produtos",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "produtos"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 2625,\n    \"estoque\": 7034,\n    \"nome\": \"string\",\n    \"preco\": 4693.685322289664\n  },\n  {\n    \"id\": 8465,\n    \"estoque\": 8640,\n    \"nome\": \"string\",\n    \"preco\": 1610.6230594012484\n  }\n]"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            },
+            {
+              "name": "salvar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 7268,\n  \"estoque\": 4898,\n  \"nome\": \"string\",\n  \"preco\": 1044.3925053618675\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/produtos",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "produtos"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 7268,\n  \"estoque\": 4898,\n  \"nome\": \"string\",\n  \"preco\": 1044.3925053618675\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 7268,\n  \"estoque\": 4898,\n  \"nome\": \"string\",\n  \"preco\": 1044.3925053618675\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 7268,\n  \"estoque\": 4898,\n  \"nome\": \"string\",\n  \"preco\": 1044.3925053618675\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": 7268,\n  \"estoque\": 4898,\n  \"nome\": \"string\",\n  \"preco\": 1044.3925053618675\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/produtos",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "produtos"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pagamento",
+          "item": [
+            {
+              "name": "teste",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/pagamento",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pagamento"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "string"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            },
+            {
+              "name": "pagar",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/pagamento?pedidoId=3283",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pagamento"
+                  ],
+                  "query": [
+                    {
+                      "key": "pedidoId",
+                      "value": "3283"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento?pedidoId=3283",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ],
+                      "query": [
+                        {
+                          "key": "pedidoId",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento?pedidoId=3283",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ],
+                      "query": [
+                        {
+                          "key": "pedidoId",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/pagamento?pedidoId=3283",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "pagamento"
+                      ],
+                      "query": [
+                        {
+                          "key": "pedidoId",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "login",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "clientes",
+          "item": [
+            {
+              "name": "cadastro",
+              "item": [
+                {
+                  "name": "criar 2",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes/cadastro?filial=[object Object]&id=2416&participaFidelidade=true&nome=string&email=string&senha=string&tipo=string&pontos=1826",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes",
+                        "cadastro"
+                      ],
+                      "query": [
+                        {
+                          "key": "filial",
+                          "value": "[object Object]"
+                        },
+                        {
+                          "key": "id",
+                          "value": "2416"
+                        },
+                        {
+                          "key": "participaFidelidade",
+                          "value": "true"
+                        },
+                        {
+                          "key": "nome",
+                          "value": "string"
+                        },
+                        {
+                          "key": "email",
+                          "value": "string"
+                        },
+                        {
+                          "key": "senha",
+                          "value": "string"
+                        },
+                        {
+                          "key": "tipo",
+                          "value": "string"
+                        },
+                        {
+                          "key": "pontos",
+                          "value": "1826"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/cadastro?filial=[object Object]&id=2416&participaFidelidade=true&nome=string&email=string&senha=string&tipo=string&pontos=1826",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            "cadastro"
+                          ],
+                          "query": [
+                            {
+                              "key": "filial",
+                              "value": "[object Object]"
+                            },
+                            {
+                              "key": "id",
+                              "value": "2416"
+                            },
+                            {
+                              "key": "participaFidelidade",
+                              "value": "true"
+                            },
+                            {
+                              "key": "nome",
+                              "value": "string"
+                            },
+                            {
+                              "key": "email",
+                              "value": "string"
+                            },
+                            {
+                              "key": "senha",
+                              "value": "string"
+                            },
+                            {
+                              "key": "tipo",
+                              "value": "string"
+                            },
+                            {
+                              "key": "pontos",
+                              "value": "1826"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "string"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/cadastro?filial=[object Object]&id=2416&participaFidelidade=true&nome=string&email=string&senha=string&tipo=string&pontos=1826",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            "cadastro"
+                          ],
+                          "query": [
+                            {
+                              "key": "filial",
+                              "value": "[object Object]"
+                            },
+                            {
+                              "key": "id",
+                              "value": "2416"
+                            },
+                            {
+                              "key": "participaFidelidade",
+                              "value": "true"
+                            },
+                            {
+                              "key": "nome",
+                              "value": "string"
+                            },
+                            {
+                              "key": "email",
+                              "value": "string"
+                            },
+                            {
+                              "key": "senha",
+                              "value": "string"
+                            },
+                            {
+                              "key": "tipo",
+                              "value": "string"
+                            },
+                            {
+                              "key": "pontos",
+                              "value": "1826"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/cadastro?filial=[object Object]&id=2416&participaFidelidade=true&nome=string&email=string&senha=string&tipo=string&pontos=1826",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            "cadastro"
+                          ],
+                          "query": [
+                            {
+                              "key": "filial",
+                              "value": "[object Object]"
+                            },
+                            {
+                              "key": "id",
+                              "value": "2416"
+                            },
+                            {
+                              "key": "participaFidelidade",
+                              "value": "true"
+                            },
+                            {
+                              "key": "nome",
+                              "value": "string"
+                            },
+                            {
+                              "key": "email",
+                              "value": "string"
+                            },
+                            {
+                              "key": "senha",
+                              "value": "string"
+                            },
+                            {
+                              "key": "tipo",
+                              "value": "string"
+                            },
+                            {
+                              "key": "pontos",
+                              "value": "1826"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "buscar 2",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}"
+                    },
+                    {
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    },
+                    {
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/clientes/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "clientes",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "3283"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "listar 3",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/clientes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"filial\": {\n      \"id\": 5333,\n      \"nome\": \"string\"\n    },\n    \"id\": 852,\n    \"participaFidelidade\": true,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3978\n  },\n  {\n    \"filial\": {\n      \"id\": 5392,\n      \"nome\": \"string\"\n    },\n    \"id\": 9059,\n    \"participaFidelidade\": true,\n    \"nome\": \"string\",\n    \"email\": \"string\",\n    \"senha\": \"string\",\n    \"tipo\": \"string\",\n    \"pontos\": 3317\n  }\n]"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            },
+            {
+              "name": "salvar 2",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/clientes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}"
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"filial\": {\n    \"id\": 1410,\n    \"nome\": \"string\"\n  },\n  \"id\": 2416,\n  \"participaFidelidade\": true,\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\",\n  \"tipo\": \"string\",\n  \"pontos\": 1826\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/clientes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "clientes"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "itens",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "remover",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/itens/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "itens",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3283"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/itens/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "itens",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                },
+                {
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/itens/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "itens",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                },
+                {
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/itens/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "itens",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3283"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "criar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 4014,\n  \"quantidade\": 6959,\n  \"precoUnitario\": 7444.318238195728,\n  \"produto\": {\n    \"id\": 6004,\n    \"estoque\": 254,\n    \"nome\": \"string\",\n    \"preco\": 4475.911863486388\n  },\n  \"pedido\": {\n    \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/itens",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 4014,\n  \"quantidade\": 6959,\n  \"precoUnitario\": 7444.318238195728,\n  \"produto\": {\n    \"id\": 6004,\n    \"estoque\": 254,\n    \"nome\": \"string\",\n    \"preco\": 4475.911863486388\n  },\n  \"pedido\": {\n    \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/itens",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "itens"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 4014,\n  \"quantidade\": 6959,\n  \"precoUnitario\": 7444.318238195728,\n  \"produto\": {\n    \"id\": 6004,\n    \"estoque\": 254,\n    \"nome\": \"string\",\n    \"preco\": 4475.911863486388\n  },\n  \"pedido\": {\n    \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n  }\n}"
+            },
+            {
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 4014,\n  \"quantidade\": 6959,\n  \"precoUnitario\": 7444.318238195728,\n  \"produto\": {\n    \"id\": 6004,\n    \"estoque\": 254,\n    \"nome\": \"string\",\n    \"preco\": 4475.911863486388\n  },\n  \"pedido\": {\n    \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/itens",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "itens"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+            },
+            {
+              "name": "Not Found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": 4014,\n  \"quantidade\": 6959,\n  \"precoUnitario\": 7444.318238195728,\n  \"produto\": {\n    \"id\": 6004,\n    \"estoque\": 254,\n    \"nome\": \"string\",\n    \"preco\": 4475.911863486388\n  },\n  \"pedido\": {\n    \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/itens",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "itens"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {}\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}

@@ -322,6 +322,15 @@ Exemplo de credenciais:
 Obs.: As credenciais podem ser alteradas diretamente no banco de dados para fins de teste.
 
 
+## Coleção Postman
+
+A coleção Postman utilizada nos testes da API encontra-se em:
+
+/postman/Projeto-Raizes-do-nordeste.postman_collection.json
+
+Ela pode ser importada diretamente no Postman para executar os principais testes dos endpoints da aplicação.
+
+
 ## Autor
 
 Vanderlei Marcelo Calza RU:4207205

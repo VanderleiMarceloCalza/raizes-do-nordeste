@@ -291,11 +291,16 @@ O banco de dados enviado já contém dados de demonstração, incluindo usuário
 4. Executar a aplicação utilizando Maven ou pela classe principal Spring Boot.
 
 5. Acessar:
+<<<<<<< HEAD
 
 http://localhost:8080 
  
 ou tenho a segunda opção que talzez ainda tenha alguma inconcistencia que estou trabalhando para corrigir.
 
+=======
+http://localhost:8080
+ou tenho a segunda opção que talzez ainda tenha alguma inconcistencia que estou trabalhando para corrigir.
+>>>>>>> branch 'master' of https://github.com/VanderleiMarceloCalza/raizes-do-nordeste.git
 http://localhost:8080/swagger-ui/index.html#/
 
 ---

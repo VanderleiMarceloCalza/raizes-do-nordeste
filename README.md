@@ -291,8 +291,9 @@ O banco de dados enviado já contém dados de demonstração, incluindo usuário
 4. Executar a aplicação utilizando Maven ou pela classe principal Spring Boot.
 
 5. Acessar:
-
 http://localhost:8080
+ou
+http://localhost:8080/swagger-ui/index.html#/
 
 ---
 ## Usuários de Teste

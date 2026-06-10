@@ -292,7 +292,7 @@ O banco de dados enviado já contém dados de demonstração, incluindo usuário
 
 5. Acessar:
 http://localhost:8080
-ou
+ou tenho a segunda opção que talzez ainda tenha alguma inconcistencia que estou trabalhando para corrigir.
 http://localhost:8080/swagger-ui/index.html#/
 
 ---

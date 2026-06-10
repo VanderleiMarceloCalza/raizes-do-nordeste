@@ -1,61 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="/style.css">
+<title>Login</title>
+
+<link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
 
-<header>
+	<header>
 
-    <img src="/images/logo.png" class="logo">
+		<img src="/images/logo.png" class="logo">
 
-    <nav>
+		<nav>
 
-        <a href="/">Home</a>
-
-        <a href="/cardapio">Cardápio</a>
-
-        <a href="/login">Login</a>
-		
-        
-
-    </nav>
-
-</header>
+			<a href="/">Home</a> <a href="/cardapio">Cardápio</a> <a
+				href="/login">Login</a>
 
 
-    <div class="container">
 
-        <h1>🔐 Login</h1>
+		</nav>
 
-        <form action="/login" method="post">
+	</header>
 
-            <input type="email"
-                   name="email"
-                   placeholder="Digite seu email"
-                   required>
+	<p th:if="${erro}" style="color: red; font-weight: bold;">
 
-            <input type="password"
-                   name="senha"
-                   placeholder="Digite sua senha"
-                   required>
+		<span th:text="${erro}"></span>
 
-            <button type="submit">
-                Entrar
-            </button>
+	</p>
+	<div class="container">
 
-        </form>
+		<h1>🔐 Login</h1>
 
-        <p>
-            Não possui conta?
-            <a href="/cadastro">Criar conta</a>
-        </p>
+		<form action="/login" method="post">
 
-    </div>
+			<input type="email" name="email" placeholder="Digite seu email"
+				required> <input type="password" name="senha"
+				placeholder="Digite sua senha" required>
+
+			<button type="submit">Entrar</button>
+
+		</form>
+
+		<p>
+			Não possui conta? <a href="/cadastro">Criar conta</a>
+		</p>
+
+	</div>
 
 </body>
 

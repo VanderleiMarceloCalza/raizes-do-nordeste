@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Pagamento Recusado</title>
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>❌ Pagamento Recusado</h1>
+
+        <h2>Seu pagamento não foi aprovado.</h2>
+
+        <p>
+            Tente novamente com outra forma de pagamento.
+        </p>
+
+        <p>
+
+            Motivo:
+
+            <strong th:text="${mensagem}">
+                Pagamento recusado
+            </strong>
+
+        </p>
+
+        <p>
+
+            Código da transação:
+
+            <strong th:text="${codigo}">
+            </strong>
+
+        </p>
+
+        <br>
+
+        <a th:href="@{/pagamento/{id}(id=${pedidoId})}" class="botao">
+            🔄 Tentar Novamente
+        </a>
+
+        &nbsp;&nbsp;
+
+        <a href="/cardapio" class="botao">
+            🛒 Voltar ao Cardápio
+        </a>
+
+    </div>
+
+</body>
+
+</html>

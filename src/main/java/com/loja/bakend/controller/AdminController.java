@@ -8,6 +8,7 @@ import com.loja.bakend.repository.ClienteRepository;
 import com.loja.bakend.repository.EstoqueRepository;
 import com.loja.bakend.repository.FilialRepository;
 import com.loja.bakend.repository.ProdutoRepository;
+import com.loja.bakend.util.SenhaUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -135,7 +136,14 @@ public class AdminController {
             );
         }
 
-        clienteRepository.save(cliente);
+        cliente.setSenha(
+
+        	    SenhaUtil.criptografar(
+        	        cliente.getSenha()
+        	    )
+        	);
+
+        	clienteRepository.save(cliente);
 
         return "redirect:/admin";
     }

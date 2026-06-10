@@ -1,7 +1,8 @@
 package com.loja.bakend.controller;
 
 import java.util.List;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ public class ProdutoApiController {
     }
     
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Produto salvar(
 
             @RequestBody Produto produto) {

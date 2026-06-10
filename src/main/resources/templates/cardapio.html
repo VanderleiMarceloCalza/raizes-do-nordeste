@@ -86,7 +86,7 @@
 
 	</div>
 
-	<script th:inline="javascript">
+<script th:inline="javascript">
 
 let pedidoId = /*[[${pedidoId}]]*/ 0;
 
@@ -173,16 +173,21 @@ function carregarProdutos() {
 
 function adicionar(produtoId) {
 
-    if (!pedidoId || pedidoId == 0) {
+	if (!pedidoId || pedidoId == 0) {
 
-        alert(
-            "Faça login para adicionar produtos!"
-        );
+	    fetch("/api/pedidos/criar", {
+	        method: "POST"
+	    })
+	    .then(response => response.json())
+	    .then(pedido => {
 
-        window.location.href = "/login";
+	        pedidoId = pedido.id;
 
-        return;
-    }
+	        adicionar(produtoId);
+	    });
+
+	    return;
+	}
 
     fetch("/itens", {
 

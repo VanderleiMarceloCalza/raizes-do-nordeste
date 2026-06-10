@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.loja.bakend.model.Cliente;
+import com.loja.bakend.model.Filial;
 import com.loja.bakend.model.Pedido;
 import com.loja.bakend.repository.ClienteRepository;
+import com.loja.bakend.repository.FilialRepository;
 import com.loja.bakend.repository.PedidoRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 
@@ -30,7 +34,69 @@ public class PedidoApiController {
     private PedidoRepository repository;
     
     @Autowired
+    private PedidoRepository pedidoRepository;
+    
+    @Autowired
+    private FilialRepository filialRepository;
+    
+    @Autowired
     private ClienteRepository clienteRepository;
+    
+    @PostMapping("/criar")
+    public Pedido criarPedido(
+            HttpSession session) {
+
+        Long clienteId =
+            (Long) session.getAttribute(
+                "clienteId"
+            );
+
+        Long filialId =
+            (Long) session.getAttribute(
+                "filialId"
+            );
+
+        Cliente cliente =
+            clienteRepository
+            .findById(clienteId)
+            .orElseThrow();
+
+        Filial filial =
+            filialRepository
+            .findById(filialId)
+            .orElseThrow();
+
+        Pedido pedido =
+            new Pedido();
+
+        pedido.setCliente(cliente);
+
+        pedido.setFilial(filial);
+
+        pedido.setCanalPedido(
+            CanalPedido.WEB
+        );
+
+        pedido.setStatus(
+            "PENDENTE"
+        );
+
+        pedido.setValorTotal(
+            0.0
+        );
+
+        pedido =
+            pedidoRepository.save(
+                pedido
+            );
+
+        session.setAttribute(
+            "pedidoId",
+            pedido.getId()
+        );
+
+        return pedido;
+    }
 
     @GetMapping
     public List<Pedido> listar(
@@ -55,7 +121,11 @@ public class PedidoApiController {
 
         return repository.findById(id)
 
-                .orElseThrow();
+                .orElseThrow(() ->
+
+                new RuntimeException(
+                    "Pedido não encontrado"
+                ));
     }
 
     @PostMapping
@@ -165,11 +235,11 @@ public class PedidoApiController {
                     novoValor
                 );
 
-                cliente.setPontos(0);
+        //        cliente.setPontos(0);
 
-                clienteRepository.save(
-                    cliente
-                );
+       //         clienteRepository.save(
+        //            cliente
+        //        );
             }
         }
 

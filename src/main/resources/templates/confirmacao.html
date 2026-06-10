@@ -12,38 +12,66 @@
 
 <body>
 
-	<h1>🎉 Pedido Confirmado!</h1>
+	<h1>🎉 Pagamento Aprovado!</h1>
 
-	<h2>Obrigado pela compra 😄</h2>
+<p>
+    Seu pagamento foi processado com sucesso.
+</p>
 
-	<p>Seu pedido foi recebido e será preparado em breve.</p>
+<hr>
 
-	<p>
+<h3>📋 Resumo da Operação</h3>
 
-		Forma de pagamento: <strong th:text="${metodo}"></strong>
+<p>
+    ✅ Pedido criado com sucesso
+</p>
 
-	</p>
+<p>
+    ✅ Pagamento aprovado pelo serviço Mock
+</p>
 
-	<p>
+<p>
+    ✅ Status do pagamento: APROVADO
+</p>
 
-		Valor: R$ <strong th:text="${#numbers.formatDecimal(valor, 1, 2)}"></strong>
+<p>
+    👨‍🍳 Pedido enviado para preparação
+</p>
 
-	</p>
+<p>
+    🔥 Status atual: EM PREPARO
+</p>
 
-	<p>
+<hr>
 
-		Status: <strong th:text="${status}"></strong>
+<p>
+    💳 Forma de pagamento:
+    <b>PIX</b>
+</p>
 
-	</p>
+<p>
+    💰 Valor:
+    <b>R$ 18,00</b>
+</p>
 
-	<p>
+<p>
+    🔑 Código da transação:
+    <b>PAY1780961425113</b>
+</p>
 
-		Código: <strong th:text="${codigo}"></strong>
+<hr>
 
-	</p>
+<p>
+    Agora você pode acompanhar o andamento do pedido pela área de acompanhamento.
+</p>
 
-	<a href="/"> Voltar para Home </a>
-	<a href="/acompanhar"> Acompanhar Pedido</a>
+<a href="/acompanhar" class="botao">
+    📦 Acompanhar Pedido
+</a>
+
+<a href="/" class="botao">
+    🏠 Voltar para Home
+</a>
 	
 </body>
 

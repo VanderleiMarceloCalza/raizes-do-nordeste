@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.loja.bakend.model.Cliente;
 
 import com.loja.bakend.repository.ClienteRepository;
-
+import com.loja.bakend.util.SenhaUtil;
+import com.loja.bakend.exception.RecursoNaoEncontradoException;
 @RestController
 
 @RequestMapping("/api/clientes")
@@ -40,7 +41,12 @@ public class ClienteApiController {
 
         return repository.findById(id)
 
-                .orElseThrow();
+            .orElseThrow(() ->
+
+                new RecursoNaoEncontradoException(
+                    "Cliente não encontrado"
+                )
+            );
     }
 
     @PostMapping
@@ -48,12 +54,26 @@ public class ClienteApiController {
 
             @RequestBody Cliente cliente) {
 
+        cliente.setSenha(
+
+            SenhaUtil.criptografar(
+                cliente.getSenha()
+            )
+        );
+
         return repository.save(
             cliente
         );
     }
     @PostMapping("/cadastro")
     public String criar(Cliente cliente) {
+
+        cliente.setSenha(
+
+            SenhaUtil.criptografar(
+                cliente.getSenha()
+            )
+        );
 
         repository.save(cliente);
 

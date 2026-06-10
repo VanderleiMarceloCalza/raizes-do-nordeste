@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.loja.bakend.model.Cliente;
 import com.loja.bakend.repository.ClienteRepository;
 import com.loja.bakend.repository.FilialRepository;
+import com.loja.bakend.util.SenhaUtil;
 
 @Controller
 public class CadastroController {
@@ -32,7 +33,14 @@ public class CadastroController {
     }
 
     @PostMapping("/cadastro")
-    public String salvar(Cliente cliente) {
+    public String criar(Cliente cliente) {
+
+        cliente.setSenha(
+
+            SenhaUtil.criptografar(
+                cliente.getSenha()
+            )
+        );
 
         repository.save(cliente);
 

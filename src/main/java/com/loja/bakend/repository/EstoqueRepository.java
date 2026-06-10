@@ -3,7 +3,7 @@ package com.loja.bakend.repository;
 import com.loja.bakend.model.Estoque;
 
 import jakarta.transaction.Transactional;
-
+import com.loja.bakend.repository.EstoqueRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 
@@ -15,7 +15,9 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
 	List<Estoque> findByFilialId(Long filialId);
 
 	Optional<Estoque> findByProdutoIdAndFilialId(Long produtoId, Long filialId);
-
+	
+	
+	
 	@Transactional
 	@Modifying
 	void deleteByProdutoId(Long produtoId);

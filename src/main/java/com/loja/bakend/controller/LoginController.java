@@ -1,13 +1,13 @@
 package com.loja.bakend.controller;
+
 import com.loja.bakend.util.SenhaUtil;
-import com.loja.bakend.model.CanalPedido;
 import com.loja.bakend.model.Cliente;
-import com.loja.bakend.model.Pedido;
 import com.loja.bakend.repository.ClienteRepository;
 import com.loja.bakend.repository.PedidoRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,48 +34,44 @@ public class LoginController {
 
 			@RequestParam String senha,
 
-			HttpSession session) {
+			HttpSession session, Model model) {
 
 		Cliente cliente =
 
-			    clienteRepository
-			        .findByEmail(email)
-			        .orElse(null);
+				clienteRepository.findByEmail(email).orElse(null);
 
-			if(cliente == null) {
+		if (cliente == null) {
 
-			    return "redirect:/login";
-			}
+			model.addAttribute(
 
-			if(!SenhaUtil.verificar(
+					"erro",
 
-			        senha,
+					"Email ou senha inválidos");
 
-			        cliente.getSenha())) {
+			return "login";
+		}
 
-			    return "redirect:/login";
-			}
+		if (!SenhaUtil.verificar(
 
-		Pedido pedido = new Pedido();
-		pedido.setCanalPedido(
-			    CanalPedido.WEB
-			);
-		pedido.setCliente(cliente);
+				senha,
 
-		pedido.setStatus("PENDENTE");
+				cliente.getSenha())) {
 
-		pedido.setValorTotal(0.0);
+			model.addAttribute(
 
-		pedidoRepository.save(pedido);
+					"erro",
+
+					"Email ou senha inválidos");
+
+			return "login";
+		}
 
 		session.setAttribute("clienteId", cliente.getId());
 
-		session.setAttribute("pedidoId", pedido.getId());
-		
 		session.setAttribute("nome", cliente.getNome());
-		
+
 		session.removeAttribute("filialId");
-		
+
 		if (cliente.getTipo().equals("ADMIN")) {
 
 			return "redirect:/admin";
@@ -85,11 +81,19 @@ public class LoginController {
 
 			return "redirect:/gerente";
 		}
-		if(cliente.getTipo().equals("ATENDENTE")) {
+		if (cliente.getTipo().equals("ATENDENTE")) {
 
-		    return "redirect:/pedido/balcao";
+			return "redirect:/pedido/balcao";
 		}
-		
+
 		return "redirect:/cardapio";
+	}
+
+	public PedidoRepository getPedidoRepository() {
+		return pedidoRepository;
+	}
+
+	public void setPedidoRepository(PedidoRepository pedidoRepository) {
+		this.pedidoRepository = pedidoRepository;
 	}
 }

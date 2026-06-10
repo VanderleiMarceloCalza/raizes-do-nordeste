@@ -46,16 +46,53 @@ public class PagamentoController {
 
 	@PostMapping("/pagamento")
 	public String pagar(@RequestParam String metodo, @RequestParam Long pedidoId, HttpSession session, Model model) {
-
+		
+		System.out.println(
+			    "Método recebido: " + metodo
+			);
+		
 		Pedido pedido = pedidoRepository.findById(pedidoId).orElseThrow();
 
 		Pagamento pagamento = new Pagamento();
 
 		pagamento.setMetodo(metodo);
 
-		Map<String, String> retorno = service.processarPagamento();
+		Map<String, String> retorno =
+			    service.processarPagamento();
 
+			if("MOCK_RECUSADO".equals(metodo)) {
+				
+				System.out.println("FORÇANDO RECUSA");
+
+			    retorno.put(
+			        "status",
+			        "RECUSADO"
+			    );
+
+			    retorno.put(
+			        "mensagem",
+			        "Pagamento recusado pelo gateway mock."
+			    );
+			}
+		
+			
 		pagamento.setStatus(retorno.get("status"));
+		
+		if("APROVADO".equals(
+		        retorno.get("status"))) {
+			
+			
+			
+		    pedido.setStatus(
+		    		"EM PREPARO"
+		    );
+
+		} else {
+
+		    pedido.setStatus(
+		        "CANCELADO"
+		    );
+		}
 
 		pagamento.setPedido(pedido);
 
@@ -77,21 +114,27 @@ public class PagamentoController {
 			    pedido
 			);
 			
-			Cliente cliente = pedido.getCliente();
+			if("APROVADO".equals(
+			        retorno.get("status"))) {
 
-			if(Boolean.TRUE.equals(
-			        cliente.getParticipaFidelidade())) {
+			    Cliente cliente =
+			        pedido.getCliente();
 
-			    cliente.setPontos(
+			    if(Boolean.TRUE.equals(
+			            cliente.getParticipaFidelidade())) {
 
-			        cliente.getPontos()
+			        cliente.setPontos(
 
-			        + pedido.getValorTotal().intValue()
-			    );
+			            cliente.getPontos()
 
-			    clienteRepository.save(
-			        cliente
-			    );
+			            + pedido.getValorTotal()
+			                     .intValue()
+			        );
+
+			        clienteRepository.save(
+			            cliente
+			        );
+			    }
 			}
 			
 		session.removeAttribute("pedidoId");
@@ -103,10 +146,38 @@ public class PagamentoController {
 
 		model.addAttribute("metodo", metodo);
 
-		model.addAttribute("status", retorno.get("status"));
+		model.addAttribute(
+		    "status",
+		    retorno.get("status")
+		);
 
-		model.addAttribute("codigo", retorno.get("codigo"));
-		model.addAttribute("valor", pedido.getValorTotal());
+		model.addAttribute(
+		    "codigo",
+		    retorno.get("codigo")
+		);
+
+		model.addAttribute(
+		    "valor",
+		    pedido.getValorTotal()
+		);
+
+		if("RECUSADO".equals(
+		        retorno.get("status"))) {
+
+		    model.addAttribute(
+		        "mensagem",
+		        retorno.get("mensagem")
+		    );
+
+		    model.addAttribute(
+		        "pedidoId",
+		        pedido.getId()
+		    );
+
+		    return "pagamento-recusado";
+		}
+
+		
 		return "confirmacao";
 
 	}
